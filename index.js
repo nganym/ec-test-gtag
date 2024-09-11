@@ -48,8 +48,8 @@ document
     allow_custom_scripts: true,
     send_to: "DC-11107970/conve0/ectes0+standard",
     user_data: {
-      email: formObject.email,
-      phone_number: formObject.phone,
+      sha256_email_address: formObject.email,
+      sha256_phone_number: formObject.phone,
     },
   });
 
