@@ -44,12 +44,21 @@ document
       phone: await hash(form.phone.value),
     };
 
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: "annaPurchaseEC",
-      customerEmail: formObject.email,
-      customerPhone: formObject.phone,
-    });
+      gtag("event", "conversion", {
+    allow_custom_scripts: true,
+    send_to: "DC-11107970/conve0/ectes0+standard",
+    user_data: {
+      email: formObject.email,
+      phone_number: formObject.phone,
+    },
+  });
+
+    // window.dataLayer = window.dataLayer || [];
+    // window.dataLayer.push({
+    //   event: "annaPurchaseEC",
+    //   customerEmail: formObject.email,
+    //   customerPhone: formObject.phone,
+    // });
 
     console.log("Hashed Customer Email Sent", formObject.email);
     console.log("Hashed Customer Phone Sent", formObject.phone);
